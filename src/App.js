@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import { BioData } from './components/BioData';
+import { BiodataTable } from './components/BiodataTable';
 
 function App() {
+  const Array = [
+    {
+      Id: "22DE01",
+      FirstName: "John",
+      LastName: "Doe",
+      Email: "johndoe@example.com",
+      Gender: "Male",
+      Designation: "Design Engineer"
+    }
+  ]
+
+
+  const [Biodata, setBiodata] = useState(Array)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container-fluid">
+      <h2 className="heading">React Crud Operations</h2>
+      <BioData Biodata={Biodata} setBiodata={setBiodata} />
+      <hr className='divider' />
+      <BiodataTable Biodata={Biodata} setBiodata={setBiodata} />
     </div>
   );
 }
