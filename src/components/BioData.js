@@ -62,11 +62,11 @@ export function BioData({ Biodata, setBiodata }) {
                     {/* Gender */}
                     <Form.Group as={Col} controlId="Gender">
                         <Form.Label>Gender</Form.Label>
-                        <Form.Select defaultValue="Select Gender">
+                        <Form.Select onBlur={(evt) => { tempObject.Gender = evt.target.value; }}>
                             <option>Select Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Prefer not to specify</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to specify">Prefer not to specify</option>
                         </Form.Select>
                     </Form.Group>
                 </Row>
